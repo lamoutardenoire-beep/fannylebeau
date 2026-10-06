@@ -8,9 +8,9 @@
     <style>
         :root {
             --primary: #7253f9;
-            --primary-light: #e3d8f5;
             --accent: #cb6ce6;
             --text-dark: #2b2522;
+            --bg-dark: #0f0d14;
             --bg-light: #f7f6fa;
             --white: #ffffff;
         }
@@ -18,52 +18,79 @@
         body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background-color: var(--white); line-height: 1.6; }
         h1, h2, h3 { font-family: 'Poppins', sans-serif; }
         
-        .hero { background: linear-gradient(135deg, #1f1b2e 0%, #2b2522 100%); color: var(--white); padding: 60px 20px; text-align: center; }
-        .hero-image { max-width: 280px; width: 100%; height: auto; margin-bottom: 25px; }
-        .countdown-container { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 20px; }
-        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .hero h1 span { color: var(--primary); }
-        .hero p { font-size: 1.15rem; color: #d2c6e5; max-width: 700px; margin: 0 auto 30px; }
-        
-        .cta-button { background: linear-gradient(90deg, var(--accent), var(--primary)); color: var(--white); border: none; padding: 18px 36px; font-size: 1.2rem; font-weight: 700; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; box-shadow: 0 10px 25px rgba(114, 83, 249, 0.4); transition: transform 0.2s, box-shadow 0.2s; }
-        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(114, 83, 249, 0.6); }
-        .cta-sub { display: block; font-size: 0.85rem; font-weight: 300; opacity: 0.85; margin-top: 6px; }
+        /* Top Countdown Bar */
+        .top-bar { background-color: var(--bg-dark); color: var(--white); padding: 15px 20px; text-align: center; font-size: 0.95rem; font-weight: 600; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .countdown-timer { display: flex; gap: 15px; font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: var(--accent); }
+        .countdown-item span { display: block; font-size: 0.7rem; color: #aaa; text-transform: uppercase; font-weight: 300; }
 
+        /* Hero Section - Two Columns */
+        .hero { background: var(--bg-dark); color: var(--white); padding: 50px 20px 70px; }
+        .hero-container { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        
+        .hero-image-col { flex: 1; min-width: 280px; text-align: center; }
+        .hero-image { max-width: 100%; width: 380px; height: auto; display: block; margin: 0 auto; }
+
+        .hero-content-col { flex: 1.3; min-width: 300px; }
+        .sub-badge { font-size: 0.9rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; font-weight: 600; }
+        .hero h1 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.25; margin-bottom: 20px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.05rem; color: #d2c6e5; margin-bottom: 30px; }
+
+        /* CTA Button US Style */
+        .cta-button { background: linear-gradient(90deg, var(--accent), var(--primary)); color: var(--white); border: none; padding: 20px 40px; font-size: 1.25rem; font-weight: 700; border-radius: 12px; cursor: pointer; text-decoration: none; display: block; text-align: center; box-shadow: 0 10px 30px rgba(114, 83, 249, 0.4); transition: transform 0.2s, box-shadow 0.2s; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(114, 83, 249, 0.6); }
+        .cta-sub { display: block; font-size: 0.85rem; font-weight: 300; opacity: 0.9; margin-top: 6px; }
+
+        /* Sections standard */
         .section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
         .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: var(--text-dark); }
         .section-title span { color: var(--primary); }
 
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        @media(max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+        @media(max-width: 768px) { 
+            .grid-2 { grid-template-columns: 1fr; } 
+            .hero-container { flex-direction: column; text-align: center; }
+        }
         
-        .card { background: var(--bg-light); border: 1px solid var(--primary-light); border-radius: 16px; padding: 30px; }
+        .card { background: var(--bg-light); border: 1px solid #e3d8f5; border-radius: 16px; padding: 30px; }
         .card h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--primary); }
         .card ul { list-style: none; }
         .card li { margin-bottom: 15px; position: relative; padding-left: 25px; }
         .card li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
-
-        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        @media(max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } }
-        .step-card { background: var(--white); border: 2px solid var(--primary-light); border-radius: 12px; padding: 25px; text-align: center; }
-        .step-number { font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
 
         .footer { text-align: center; padding: 40px; background: var(--bg-light); font-size: 0.9rem; color: #666; }
     </style>
 </head>
 <body>
 
-    <!-- HERO SECTION -->
-    <header class="hero">
-        <!-- ICI : Intégration de la photo PNG de Fanny -->
-        <img src="./fanny.png" alt="Fanny Lebeau" class="hero-image">
+    <!-- TOP COUNTDOWN BAR -->
+    <div class="top-bar">
+        <span>Le live débute dans :</span>
+        <div class="countdown-timer">
+            <div class="countdown-item">05 <span>Jours</span></div> :
+            <div class="countdown-item">02 <span>Heures</span></div> :
+            <div class="countdown-item">26 <span>Minutes</span></div> :
+            <div class="countdown-item">05 <span>Secondes</span></div>
+        </div>
+    </div>
 
-        <div class="countdown-container">⚠️ Le live débute dans 04 jours : 03h : 36m</div>
-        <h1>Transforme ton expertise en un <span>système d'acquisition client prévisible</span></h1>
-        <p>Découvre la méthode en 4 piliers pour structurer ton offre, te démarquer et signer tes premiers clients sans y passer tes journées.</p>
-        <a href="#inscription" class="cta-button">
-            Je veux mon plan d'action gratuit
-            <span class="cta-sub">Dimanche 11 octobre à 20h00 • Replay offert</span>
-        </a>
+    <!-- HERO SECTION (2 Colonnes : Image à gauche, Texte & CTA à droite) -->
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-image-col">
+                <!-- Vérifie bien que fanny.png est à la racine du dépôt GitHub -->
+                <img src="./fanny.png" alt="Fanny Lebeau" class="hero-image">
+            </div>
+            <div class="hero-content-col">
+                <div class="sub-badge">Masterclass live offerte • Dimanche 11 octobre, 20h</div>
+                <h1>Tu as l'expertise, mais <span>toujours pas de clients ?</span></h1>
+                <p>Découvre les 4 piliers qui manquent à ton business pour enfin attirer, convaincre et vendre.</p>
+                <a href="#inscription" class="cta-button">
+                    JE RÉSERVE MA PLACE
+                    <span class="cta-sub">Dimanche 11 octobre à 20h00 • Replay offert</span>
+                </a>
+            </div>
+        </div>
     </header>
 
     <!-- SECTION QUALIFICATION -->
@@ -73,42 +100,17 @@
             <div class="card">
                 <h3>Tu te reconnais ici :</h3>
                 <ul>
-                    <li>Tu as lancé ton activité et créé ton compte, mais tu manques de visibilité claire sur tes actions quotidiennes.</li>
-                    <li>Tu testes différentes stratégies sans savoir ce qui génère réellement du chiffre d'affaires.</li>
-                    <li>Tu souhaites un plan d'action structuré pour attirer des clients qualifiés de manière pérenne.</li>
+                    <li>Tu disposes d'une réelle expertise mais ton flux de clients potentiels est imprévisible d'un mois sur l'autre.</li>
+                    <li>Tu multiplies les actions dispersées sur les réseaux sociaux sans identifier ce qui convertit réellement.</li>
+                    <li>Tu veux structurer une offre haut de gamme claire et irrésistible.</li>
                 </ul>
             </div>
-            <div class="card" style="background: #fff; border-color: #e1a3f3;">
+            <div class="card" style="background: #fff; border-color: #f3d1e1;">
                 <h3 style="color: #a21d36;">Ce n'est pas pour toi si :</h3>
                 <ul>
-                    <li>Tu cherches uniquement une solution miracle sans implémentation ni passage à l'action.</li>
-                    <li>Tu as déjà un système d'acquisition fluide qui tourne à plein régime.</li>
-                    <li>Vivre sereinement de ton activité n'est pas une priorité actuelle.</li>
+                    <li>Tu cherches une formule magique sans implication ni mise en place opérationnelle.</li>
+                    <li>Ton système d'acquisition actuel génère déjà la croissance et la prévisibilité attendues.</li>
                 </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION CE QUE TU VAS APPRENDRE -->
-    <section class="section" style="background: var(--bg-light); max-width: 100%;">
-        <div style="max-width: 1000px; margin: 0 auto;">
-            <h2 class="section-title">Ce que tu vas <span>apprendre</span> en direct</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">01</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">De l'expertise à l'évidence</h3>
-                    <p style="font-size: 0.95rem;">Clarifier ton positionnement pour devenir le choix numéro un sur ton marché.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">02</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">De l'évidence à l'attention</h3>
-                    <p style="font-size: 0.95rem;">Activer une stratégie de visibilité magnétique qui attire les bonnes personnes.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">03</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">De l'attention aux clients</h3>
-                    <p style="font-size: 0.95rem;">Construire un tunnel de vente simple et redoutable pour convertir ton audience.</p>
-                </div>
             </div>
         </div>
     </section>
