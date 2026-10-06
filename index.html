@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterclass Live Exclusive : Le Système en 4 Piliers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7253f9;
+            --primary-light: #e3d8f5;
+            --accent: #cb6ce6;
+            --text-dark: #2b2522;
+            --bg-light: #f7f6fa;
+            --white: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background-color: var(--white); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+        
+        .hero { background: linear-gradient(135deg, #1f1b2e 0%, #2b2522 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .countdown-container { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 20px; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.15rem; color: #d2c6e5; max-width: 700px; margin: 0 auto 30px; }
+        
+        .cta-button { background: linear-gradient(90deg, var(--accent), var(--primary)); color: var(--white); border: none; padding: 18px 36px; font-size: 1.2rem; font-weight: 700; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; box-shadow: 0 10px 25px rgba(114, 83, 249, 0.4); transition: transform 0.2s, box-shadow 0.2s; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(114, 83, 249, 0.6); }
+        .cta-sub { display: block; font-size: 0.85rem; font-weight: 300; opacity: 0.85; margin-top: 6px; }
+
+        .section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: var(--text-dark); }
+        .section-title span { color: var(--primary); }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media(max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+        
+        .card { background: var(--bg-light); border: 1px solid var(--primary-light); border-radius: 16px; padding: 30px; }
+        .card h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--primary); }
+        .card ul { list-style: none; }
+        .card li { margin-bottom: 15px; position: relative; padding-left: 25px; }
+        .card li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media(max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } }
+        .step-card { background: var(--white); border: 2px solid var(--primary-light); border-radius: 12px; padding: 25px; text-align: center; }
+        .step-number { font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+
+        .footer { text-align: center; padding: 40px; background: var(--bg-light); font-size: 0.9rem; color: #666; }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="countdown-container">⚠️ Le live débute dans 04 jours : 03h : 36m</div>
+        <h1>Transforme ton expertise en un <span>système d'acquisition client prévisible</span></h1>
+        <p>Découvre la méthode en 4 piliers pour structurer ton offre, te démarquer et signer tes premiers clients sans y passer tes journées.</p>
+        <a href="#inscription" class="cta-button">
+            Je veux mon plan d'action gratuit
+            <span class="cta-sub">Dimanche 11 octobre à 20h00 • Replay offert</span>
+        </a>
+    </header>
+
+    <!-- SECTION QUALIFICATION -->
+    <section class="section">
+        <h2 class="section-title">Ce live est fait <span>pour toi</span> si...</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Tu te reconnais ici :</h3>
+                <ul>
+                    <li>Tu as lancé ton activité et créé ton compte, mais tu manques de visibilité claire sur tes actions quotidiennes.</li>
+                    <li>Tu testes différentes stratégies sans savoir ce qui génère réellement du chiffre d'affaires.</li>
+                    <li>Tu souhaites un plan d'action structuré pour attirer des clients qualifiés de manière pérenne.</li>
+                </ul>
+            </div>
+            <div class="card" style="background: #fff; border-color: #e1a3f3;">
+                <h3 style="color: #a21d36;">Ce n'est pas pour toi si :</h3>
+                <ul>
+                    <li>Tu cherches uniquement une solution miracle sans implémentation ni passage à l'action.</li>
+                    <li>Tu as déjà un système d'acquisition fluide qui tourne à plein régime.</li>
+                    <li>Vivre sereinement de ton activité n'est pas une priorité actuelle.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CE QUE TU VAS APPRENDRE -->
+    <section class="section" style="background: var(--bg-light); max-width: 100%;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 class="section-title">Ce que tu vas <span>apprendre</span> en direct</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">De l'expertise à l'évidence</h3>
+                    <p style="font-size: 0.95rem;">Clarifier ton positionnement pour devenir le choix numéro un sur ton marché.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">De l'évidence à l'attention</h3>
+                    <p style="font-size: 0.95rem;">Activer une stratégie de visibilité magnétique qui attire les bonnes personnes.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">De l'attention aux clients</h3>
+                    <p style="font-size: 0.95rem;">Construire un tunnel de vente simple et redoutable pour convertir ton audience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / APPEL FINAL -->
+    <footer class="footer">
+        <p>© 2026 FL Boost Her • Tous droits réservés</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">Ce site n'est pas affilié à Facebook ou LinkedIn.</p>
+    </footer>
+
+</body>
+</html>
