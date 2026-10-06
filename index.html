@@ -19,6 +19,7 @@
         h1, h2, h3 { font-family: 'Poppins', sans-serif; }
         
         .hero { background: linear-gradient(135deg, #1f1b2e 0%, #2b2522 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .hero-image { max-width: 280px; width: 100%; height: auto; margin-bottom: 25px; }
         .countdown-container { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 20px; }
         .hero h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
         .hero h1 span { color: var(--primary); }
@@ -53,6 +54,9 @@
 
     <!-- HERO SECTION -->
     <header class="hero">
+        <!-- ICI : Intégration de la photo PNG de Fanny -->
+        <img src="./images/fanny.png" alt="Fanny Lebeau" class="hero-image">
+
         <div class="countdown-container">⚠️ Le live débute dans 04 jours : 03h : 36m</div>
         <h1>Transforme ton expertise en un <span>système d'acquisition client prévisible</span></h1>
         <p>Découvre la méthode en 4 piliers pour structurer ton offre, te démarquer et signer tes premiers clients sans y passer tes journées.</p>
@@ -109,10 +113,9 @@
         </div>
     </section>
 
-    <!-- FOOTER / APPEL FINAL -->
+    <!-- FOOTER -->
     <footer class="footer">
         <p>© 2026 FL Boost Her • Tous droits réservés</p>
-        <p style="margin-top: 10px; font-size: 0.8rem;">Ce site n'est pas affilié à Facebook ou LinkedIn.</p>
     </footer>
 
 </body>
