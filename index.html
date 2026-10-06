@@ -18,12 +18,9 @@
         body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background-color: var(--white); line-height: 1.6; }
         h1, h2, h3 { font-family: 'Poppins', sans-serif; }
         
-        /* Top Countdown Bar */
-        .top-bar { background-color: var(--bg-dark); color: var(--white); padding: 15px 20px; text-align: center; font-size: 0.95rem; font-weight: 600; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .countdown-timer { display: flex; gap: 15px; font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: var(--accent); }
-        .countdown-item span { display: block; font-size: 0.7rem; color: #aaa; text-transform: uppercase; font-weight: 300; }
+        .top-bar { background-color: var(--bg-dark); color: var(--white); padding: 15px 20px; text-align: center; font-size: 0.95rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .countdown-timer { display: inline-flex; gap: 10px; font-family: 'Poppins', sans-serif; font-size: 1rem; color: var(--accent); margin-left: 10px; }
 
-        /* Hero Section - Two Columns */
         .hero { background: var(--bg-dark); color: var(--white); padding: 50px 20px 70px; }
         .hero-container { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
         
@@ -31,55 +28,43 @@
         .hero-image { max-width: 100%; width: 380px; height: auto; display: block; margin: 0 auto; }
 
         .hero-content-col { flex: 1.3; min-width: 300px; }
-        .sub-badge { font-size: 0.9rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; font-weight: 600; }
+        .sub-badge { font-size: 0.85rem; color: #bca4f5; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; font-weight: 400; }
         .hero h1 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.25; margin-bottom: 20px; }
         .hero h1 span { color: var(--primary); }
         .hero p { font-size: 1.05rem; color: #d2c6e5; margin-bottom: 30px; }
 
-        /* CTA Button US Style */
         .cta-button { background: linear-gradient(90deg, var(--accent), var(--primary)); color: var(--white); border: none; padding: 20px 40px; font-size: 1.25rem; font-weight: 700; border-radius: 12px; cursor: pointer; text-decoration: none; display: block; text-align: center; box-shadow: 0 10px 30px rgba(114, 83, 249, 0.4); transition: transform 0.2s, box-shadow 0.2s; }
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(114, 83, 249, 0.6); }
         .cta-sub { display: block; font-size: 0.85rem; font-weight: 300; opacity: 0.9; margin-top: 6px; }
 
-        /* Sections standard */
         .section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
         .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: var(--text-dark); }
         .section-title span { color: var(--primary); }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; }
         @media(max-width: 768px) { 
             .grid-2 { grid-template-columns: 1fr; } 
             .hero-container { flex-direction: column; text-align: center; }
         }
         
         .card { background: var(--bg-light); border: 1px solid #e3d8f5; border-radius: 16px; padding: 30px; }
-        .card h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--primary); }
+        .card h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--primary); text-align: center; }
         .card ul { list-style: none; }
-        .card li { margin-bottom: 15px; position: relative; padding-left: 25px; }
+        .card li { margin-bottom: 15px; position: relative; padding-left: 25px; font-size: 0.95rem; }
         .card li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
-        /* Social Proof / Authority Section */
-        .proof-section { background: var(--bg-light); padding: 50px 20px; text-align: center; border-top: 1px solid #e3d8f5; border-bottom: 1px solid #e3d8f5; }
-        .proof-content { max-width: 700px; margin: 0 auto; font-size: 1.1rem; font-style: italic; color: var(--text-dark); }
-        .proof-author { margin-top: 15px; font-weight: 600; font-style: normal; font-size: 0.95rem; color: var(--primary); }
+        .cta-container-center { max-width: 600px; margin: 0 auto 60px; text-align: center; }
 
-        .footer { text-align: center; padding: 40px; background: var(--white); font-size: 0.9rem; color: #666; }
+        .footer { text-align: center; padding: 40px; background: var(--white); font-size: 0.9rem; color: #666; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
 
-    <!-- TOP COUNTDOWN BAR -->
     <div class="top-bar">
-        <span>Le live débute dans :</span>
-        <div class="countdown-timer">
-            <div class="countdown-item">05 <span>Jours</span></div> :
-            <div class="countdown-item">02 <span>Heures</span></div> :
-            <div class="countdown-item">26 <span>Minutes</span></div> :
-            <div class="countdown-item">05 <span>Secondes</span></div>
-        </div>
+        Le live débute dans : 
+        <div class="countdown-timer">05 Jours : 02 Heures : 26 Minutes : 05 Secondes</div>
     </div>
 
-    <!-- HERO SECTION -->
     <header class="hero">
         <div class="hero-container">
             <div class="hero-image-col">
@@ -91,43 +76,43 @@
                 <p>Découvre les 4 piliers qui manquent à ton business pour enfin attirer, convaincre et vendre.</p>
                 <a href="#inscription" class="cta-button">
                     JE RÉSERVE MA PLACE
-                    <span class="cta-sub">100% en ligne • Accès immédiat au lien du live (Replay offert)</span>
+                    <span class="cta-sub">Dimanche 11 octobre à 20h00 • Replay offert</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- SECTION QUALIFICATION -->
     <section class="section">
         <h2 class="section-title">Ce live est fait <span>pour toi</span> si...</h2>
         <div class="grid-2">
             <div class="card">
-                <h3>Tu te reconnais ici :</h3>
+                <h3>Tu dois venir si :</h3>
                 <ul>
-                    <li>Tu disposes d'une réelle expertise mais ton flux de clients potentiels est imprévisible d'un mois sur l'autre.</li>
-                    <li>Tu multiplies les actions dispersées sur les réseaux sociaux sans identifier ce qui convertit réellement.</li>
-                    <li>Tu veux structurer une offre haut de gamme claire et irrésistible.</li>
+                    <li>Tu as lancé ton activité, créé ton compte Insta, commencé à poster... mais <strong>tu ne sais pas vraiment quoi faire ensuite.</strong></li>
+                    <li>Tu testes différents contenus et différentes stratégies sans savoir <strong>ce qui peut réellement t'apporter des clients.</strong></li>
+                    <li>Tu regardes beaucoup ce que font les autres, mais tu n'arrives toujours pas à savoir comment te différencier et attirer l'attention.</li>
+                    <li>Tu veux arrêter d'espérer que les clients viennent à toi et tu souhaites avoir un plan clair pour te rendre visible et concrétiser tes premières ventes.</li>
                 </ul>
             </div>
             <div class="card" style="background: #fff; border-color: #f3d1e1;">
-                <h3 style="color: #a21d36;">Ce n'est pas pour toi si :</h3>
+                <h3 style="color: #a21d36;">Ce n'est pas fait pour toi si :</h3>
                 <ul>
-                    <li>Tu cherches une formule magique sans implication ni mise en place opérationnelle.</li>
-                    <li>Ton système d'acquisition actuel génère déjà la croissance et la prévisibilité attendues.</li>
+                    <li>Tu cherches uniquement à <strong>faire plus de vues ou gagner des abonnés.</strong></li>
+                    <li>Tu veux une formule magique qui te permette de trouver des clients <strong>sans vendre, tester ni passer à l'action.</strong></li>
+                    <li>Tu as déjà un système prévisible qui t'apporte régulièrement des clients.</li>
+                    <li>Vivre de ton business n'est pas réellement une priorité pour toi aujourd'hui.</li>
                 </ul>
             </div>
         </div>
+
+        <div class="cta-container-center">
+            <a href="#inscription" class="cta-button">
+                JE RÉSERVE MA PLACE
+                <span class="cta-sub" style="color: #555;">Dimanche 11 octobre à 20h00</span>
+            </a>
+        </div>
     </section>
 
-    <!-- SECTION PREUVE SOCIALE / AUTORITÉ -->
-    <div class="proof-section">
-        <div class="proof-content">
-            "Structurer son offre et poser un cadre d'acquisition précis change radicalement la dynamique d'une activité d'expertise. C'est exactement la méthode que nous déployons."
-        </div>
-        <div class="proof-author">Fanny Lebeau • Fondatrice de FL Boost Her</div>
-    </div>
-
-    <!-- FOOTER -->
     <footer class="footer">
         <p>© 2026 FL Boost Her • Tous droits réservés</p>
     </footer>
