@@ -45,9 +45,21 @@
         .section-title { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 50px; letter-spacing: -0.5px; }
         .section-title span { color: var(--accent); }
 
-        /* Framework Grid */
+        /* Framework Grid & Icons */
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 40px; }
         .framework-card { background: var(--bg-card); border: 1px solid #272138; border-radius: 14px; padding: 30px 20px; }
+        .framework-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(138, 92, 246, 0.1);
+            border: 1px solid rgba(138, 92, 246, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
         .framework-step { font-size: 0.75rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
         .framework-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; color: var(--white); }
         .framework-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
@@ -75,7 +87,6 @@
         .bio-text { flex: 1.5; min-width: 280px; }
         .bio-text p { margin-bottom: 15px; color: var(--text-muted); font-size: 0.95rem; }
         .bio-avatar { flex: 1; min-width: 240px; text-align: center; }
-        .bio-placeholder-img { width: 220px; height: 220px; background: #2b233d; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: var(--text-muted); border: 2px solid var(--accent); }
 
         /* FAQ Section */
         .faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
@@ -125,119 +136,28 @@
         </div>
     </header>
 
-    <!-- 2. PILIERS / MÉCANISME -->
+    <!-- 2. PILIERS / MÉCANISME (AVEC ICÔNES VECTORIELLES) -->
     <section class="section">
         <h2 class="section-title">Ce que tu vas découvrir dans le <span>Framework</span></h2>
         <div class="grid-3">
             <div class="framework-card">
+                <div class="framework-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                </div>
                 <div class="framework-step">Pilier 01</div>
                 <h3>Le Positionnement d'Évidence</h3>
                 <p>Comment éliminer la concurrence en clarifiant ton angle unique pour devenir l'option évidente aux yeux de tes prospects.</p>
             </div>
             <div class="framework-card">
+                <div class="framework-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                </div>
                 <div class="framework-step">Pilier 02</div>
                 <h3>L'Architecture d'Acquisition</h3>
                 <p>Mettre en place un pipeline de contenu simple qui attire des prospects qualifiés sans y passer tes journées.</p>
             </div>
             <div class="framework-card">
-                <div class="framework-step">Pilier 03</div>
-                <h3>La Conversion Fluide</h3>
-                <p>Structurer un échange ou une page de vente qui transforme l'intérêt en engagement ferme, sans friction ni argumentaire lourd.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. QUALIFICATION (Pour qui / Pas pour qui) -->
-    <section class="section" style="padding-top: 0;">
-        <h2 class="section-title">Est-ce que cette masterclass est <span>pour toi</span> ?</h2>
-        <div class="grid-2">
-            <div class="qualification-card positive">
-                <h3>✓ C'est pour toi si :</h3>
-                <ul>
-                    <li>Tu as une véritable expertise mais ton acquisition client manque cruellement de prévisibilité.</li>
-                    <li>Tu en as assez de tester des tactiques isolées sur les réseaux sans savoir ce qui convertit.</li>
-                    <li>Tu veux structurer un système clair pour sécuriser tes revenus récurrents.</li>
-                </ul>
-            </div>
-            <div class="qualification-card negative">
-                <h3>✕ Ce n'est PAS pour toi si :</h3>
-                <ul>
-                    <li>Tu cherches des solutions magiques sans structurer ton offre ni fournir d'effort stratégique.</li>
-                    <li>Tu cours après des vanity metrics (likes, abonnés) sans lien avec ton chiffre d'affaires.</li>
-                    <li>Ton entreprise tourne déjà à plein régime avec un tunnel parfaitement rodé.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. LES BONUS EXCLUSIFS -->
-    <section class="bonus-section">
-        <h2 class="section-title" style="margin-bottom: 10px;">Les <span>Bonus Offerts</span> en Direct</h2>
-        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Distribués aux participantes présentes du début à la fin de la session live.</p>
-        
-        <div class="bonus-grid">
-            <div class="bonus-card">
-                <h4>Bonus #1</h4>
-                <h3>Le script de conversation</h3>
-                <p>Les messages exacts pour transformer l'intérêt d'un prospect en appel de vente sans technique agressive.</p>
-            </div>
-            <div class="bonus-card">
-                <h4>Bonus #2</h4>
-                <h3>L'audit des 10 erreurs</h3>
-                <p>La checklist pour identifier et corriger les failles invisibles qui sabotent tes conversions actuelles.</p>
-            </div>
-            <div class="bonus-card">
-                <h4>Bonus #3</h4>
-                <h3>Le planificateur d'offre</h3>
-                <p>Le template Notion pour clarifier ton positionnement tarifaire et structurer ton offre haut de gamme.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. BIO DE L'EXPERTE -->
-    <section class="section">
-        <h2 class="section-title">Qui va animer cette masterclass ?</h2>
-        <div class="bio-container">
-            <div class="bio-text">
-                <p>Bonjour, c'est Fanny !</p>
-                <p>J'ai passé plus de 12 ans à concevoir des stratégies marketing et des tunnels de vente exigeants avant de me consacrer pleinement à l'accompagnement d'entrepreneuses.</p>
-                <p>Mon constat a été simple : la plupart des expertes s'épuisent non pas par manque de compétences, mais par absence de structure d'acquisition fiable. Aujourd'hui, j'aide les entrepreneuses à poser les bases d'une activité fluide et pérenne.</p>
-            </div>
-            <div class="bio-avatar">
-                <img src="fanny-lebeau.png" alt="Fanny Lebeau" style="width: 220px; height: 220px; object-fit: cover; border-radius: 50%; border: 2px solid var(--accent); display: block; margin: 0 auto;">
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. FAQ (FOIRE AUX QUESTIONS) -->
-    <section class="section" style="padding-top: 0;">
-        <h2 class="section-title">Questions <span>fréquentes</span></h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <details>
-                    <summary>Est-ce que la masterclass sera enregistrée ?</summary>
-                    <div class="faq-answer">Oui, un replay sera envoyé par e-mail, mais la présence en direct est fortement conseillée pour participer aux questions-réponses et débloquer les bonus.</div>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary>Combien coûte l'accès à l'événement ?</summary>
-                    <div class="faq-answer">Rien du tout. Cette masterclass est 100 % offerte et à haute valeur ajoutée.</div>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary>Combien de temps dure la session ?</summary>
-                    <div class="faq-answer">Prévoyez environ 1h30, incluant la présentation stratégique et le temps d'échange en direct avec vous.</div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>Tous droits réservés © 2026 • Ce site n'est pas affilié à Facebook, Google ou YouTube.</p>
-    </footer>
-
-</body>
-</html>
+                <div class="framework-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <div class="framework-step">Pilier
