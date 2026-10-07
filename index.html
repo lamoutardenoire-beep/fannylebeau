@@ -93,7 +93,18 @@
             .badges-grid { grid-template-columns: 1fr; }
         }
 
-        .footer { text-align: center; padding: 40px; background: var(--white); font-size: 0.9rem; color: #666; border-top: 1px solid #eee; margin-top: 60px; }
+        /* Section Compte à rebours intermédiaire (Bande violette) */
+        .countdown-banner { background: #7a5cd4; color: var(--white); padding: 60px 20px; text-align: center; }
+        .countdown-banner-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; }
+        .countdown-title-wrapper { font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .countdown-numbers { display: flex; gap: 20px; text-align: center; font-size: 1.5rem; font-weight: 700; font-family: 'Poppins', sans-serif; }
+        .countdown-item { display: flex; flex-direction: column; align-items: center; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .countdown-item span:first-child { font-size: 1.8rem; font-weight: 700; }
+        
+        .cta-button-banner { background: linear-gradient(90deg, #e8a5f5, #b886fc); color: #16121e; border: none; padding: 20px 40px; font-size: 1.25rem; font-weight: 700; border-radius: 12px; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: transform 0.2s, box-shadow 0.2s; }
+        .cta-button-banner:hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); }
+
+        .footer { text-align: center; padding: 40px; background: var(--white); font-size: 0.9rem; color: #666; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
@@ -226,6 +237,30 @@
                     <div class="badge-box">3 ans+<br>d'entrepreneuriat</div>
                     <div class="badge-box">50+<br>femmes accompagnées</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANDE COMPTE À REBOURS INTERMÉDIAIRE -->
+    <section class="countdown-banner">
+        <div class="countdown-banner-inner">
+            <div class="countdown-title-wrapper">
+                <span>Le live débute dans :</span>
+                <div class="countdown-numbers">
+                    <div class="countdown-item"><span>04</span><span>jours</span></div>
+                    <span>:</span>
+                    <div class="countdown-item"><span>09</span><span>heures</span></div>
+                    <span>:</span>
+                    <div class="countdown-item"><span>28</span><span>minutes</span></div>
+                    <span>:</span>
+                    <div class="countdown-item"><span>50</span><span>secondes</span></div>
+                </div>
+            </div>
+            <div>
+                <a href="#inscription" class="cta-button-banner">
+                    JE RÉSERVE MA PLACE
+                    <span style="display: block; font-size: 0.8rem; font-weight: 400; opacity: 0.9; margin-top: 4px;">Dimanche 11 octobre à 20h00</span>
+                </a>
             </div>
         </div>
     </section>
