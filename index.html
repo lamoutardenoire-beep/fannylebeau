@@ -162,142 +162,185 @@
 
     <!-- 2. PILIERS / MÉCANISME -->
    <style>
-    /* SECTION ENCHAÎNEMENT D'ACQUISITION (PIPELINE CONNECTÉ) */
-    .pipeline-container {
-        display: flex;
-        align-items: stretch;
-        justify-content: space-between;
-        gap: 0;
-        background: var(--bg-card);
-        border: 1px solid rgba(168, 85, 247, 0.3);
-        border-radius: 20px;
-        padding: 10px;
+    /* CONTENEUR PRINCIPAL DU SYSTÈME */
+    .system-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
         position: relative;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
 
-    .pipeline-step {
-        flex: 1;
-        padding: 30px 25px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        background: transparent;
-        transition: background 0.3s ease;
-    }
-
-    /* Séparateurs & Flèches d'imbrication entre les blocs (Desktop) */
-    .pipeline-step:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        right: -15px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 30px;
-        height: 30px;
-        background-color: var(--bg-card);
-        border-right: 2px solid var(--accent);
-        border-top: 2px solid var(--accent);
-        transform: translateY(-50%) rotate(45deg);
-        z-index: 2;
-    }
-
-    .pipeline-step:not(:last-child) {
-        border-right: 1px dashed rgba(168, 85, 247, 0.25);
-    }
-
-    /* Numérotation / Badge séquentiel */
-    .pipeline-number {
-        font-size: 2rem;
-        font-weight: 800;
-        background: linear-gradient(90deg, #c084fc, #f472b6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        line-height: 1;
-        margin-bottom: 12px;
-    }
-
-    .pipeline-step h3 {
-        font-size: 1.1rem;
-        font-weight: 800;
-        color: var(--white);
-        margin-bottom: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .pipeline-step p {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        line-height: 1.6;
-    }
-
-    /* Tag de continuité */
-    .system-label {
+    .system-header-tag {
         text-align: center;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         font-weight: 700;
-        color: var(--accent);
+        color: #c084fc;
         text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 15px;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
     }
 
-    /* Adaptabilité mobile */
+    /* BARRE DE PROGRESSION CONNECTEUR */
+    .system-pipeline {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        position: relative;
+    }
+
+    /* Ligne horizontale fine traversante */
+    .system-pipeline::before {
+        content: "";
+        position: absolute;
+        top: 24px;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            rgba(168, 85, 247, 0.1) 0%, 
+            rgba(168, 85, 247, 0.6) 50%, 
+            rgba(168, 85, 247, 0.1) 100%);
+        z-index: 1;
+    }
+
+    /* CARTE INDIVIDUELLE */
+    .system-card {
+        background: rgba(22, 19, 33, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 16px;
+        padding: 35px 25px 30px;
+        position: relative;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+        transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .system-card:hover {
+        border-color: rgba(168, 85, 247, 0.4);
+        transform: translateY(-3px);
+    }
+
+    /* NOEUD NUMÉROTÉ SUPÉRIEUR */
+    .system-node {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #0d0b12;
+        border: 1px solid var(--accent);
+        color: var(--white);
+        font-size: 0.9rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: -58px auto 25px auto;
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+    }
+
+    /* TYPOGRAPHIE ET CONTENU */
+    .system-card h3 {
+        font-size: 0.95rem;
+        font-weight: 800;
+        color: var(--white);
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+        text-align: center;
+        min-height: 2.8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .system-card p {
+        font-size: 0.88rem;
+        color: #9ca3af;
+        line-height: 1.6;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    /* INDICATEUR D'IMBRICATION DISCRET (CHEVRON) */
+    .system-connector {
+        position: absolute;
+        right: -19px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid rgba(168, 85, 247, 0.5);
+        border-right: 2px solid rgba(168, 85, 247, 0.5);
+        transform: translateY(-50%) rotate(45deg);
+        z-index: 3;
+    }
+
     @media (max-width: 850px) {
-        .pipeline-container {
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
+        .system-pipeline {
+            grid-template-columns: 1fr;
+            gap: 45px;
         }
 
-        .pipeline-step:not(:last-child) {
-            border-right: none;
-            border-bottom: 1px dashed rgba(168, 85, 247, 0.25);
-            padding-bottom: 30px;
+        .system-pipeline::before {
+            top: 0;
+            bottom: 0;
+            left: 24px;
+            width: 1px;
+            height: 100%;
         }
 
-        .pipeline-step:not(:last-child)::after {
-            right: 50%;
-            top: auto;
-            bottom: -15px;
-            transform: translateX(50%) rotate(135deg);
+        .system-node {
+            margin: 0 0 20px 0;
+        }
+
+        .system-connector {
+            display: none;
+        }
+
+        .system-card h3, .system-card p {
+            text-align: left;
+        }
+
+        .system-card h3 {
+            min-height: auto;
         }
     }
 </style>
 
 <section class="section">
-    <div class="system-label">
-        <span>⚙️</span> Les 3 étapes indissociables du système
-    </div>
-    
-    <h2 class="section-title">Ce que tu vas apprendre <span>durant ce live</span></h2>
-
-    <div class="pipeline-container">
-        <!-- ÉTAPE 01 -->
-        <div class="pipeline-step">
-            <div class="pipeline-number">01</div>
-            <h3>DE L'EXPERTISE À L'ÉVIDENCE</h3>
-            <p>Comment clarifier ton business, ton offre et ton positionnement pour devenir le choix N°1 sur ton marché.</p>
+    <div class="system-wrapper">
+        <div class="system-header-tag">
+            <span>⚙️</span> Les 3 étapes indissociables du système
         </div>
 
-        <!-- ÉTAPE 02 -->
-        <div class="pipeline-step">
-            <div class="pipeline-number">02</div>
-            <h3>DE L'ÉVIDENCE À L'ATTENTION</h3>
-            <p>Comment créer une stratégie de visibilité qui attire naturellement les bonnes personnes à toi.</p>
-        </div>
+        <h2 class="section-title">Ce que tu vas apprendre <span>durant ce live</span></h2>
 
-        <!-- ÉTAPE 03 -->
-        <div class="pipeline-step">
-            <div class="pipeline-number">03</div>
-            <h3>DE L'ATTENTION AUX CLIENTS</h3>
-            <p>Comment créer une vraie stratégie d'acquisition pour transformer ton audience en clients.</p>
+        <div class="system-pipeline">
+            <!-- ÉTAPE 01 -->
+            <div class="system-card">
+                <div class="system-node">01</div>
+                <h3>DE L'EXPERTISE À L'ÉVIDENCE</h3>
+                <p>Comment clarifier ton business, ton offre et ton positionnement pour devenir le choix N°1 sur ton marché.</p>
+                <div class="system-connector"></div>
+            </div>
+
+            <!-- ÉTAPE 02 -->
+            <div class="system-card">
+                <div class="system-node">02</div>
+                <h3>DE L'ÉVIDENCE À L'ATTENTION</h3>
+                <p>Comment créer une stratégie de visibilité qui attire naturellement les bonnes personnes à toi.</p>
+                <div class="system-connector"></div>
+            </div>
+
+            <!-- ÉTAPE 03 -->
+            <div class="system-card">
+                <div class="system-node">03</div>
+                <h3>DE L'ATTENTION AUX CLIENTS</h3>
+                <p>Comment créer une vraie stratégie d'acquisition pour transformer ton audience en clients.</p>
+            </div>
         </div>
     </div>
 </section>
