@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masterclass Live Exclusive : Le Système en 4 Piliers</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poppins:wght@400;600;700&family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poppins:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #7253f9;
@@ -99,11 +99,14 @@
         .cta-button-banner { background: linear-gradient(90deg, #e8a5f5, #b886fc); color: #16121e; border: none; padding: 20px 40px; font-size: 1.25rem; font-weight: 700; border-radius: 12px; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: transform 0.2s, box-shadow 0.2s; }
         .cta-button-banner:hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); }
 
-        /* SECTION FAQ MISE À JOUR EXACTE */
+        /* SECTION FAQ CORRIGÉE EXACTE */
         .faq-section { max-width: 1100px; margin: 0 auto; padding: 80px 20px; display: flex; gap: 50px; align-items: flex-start; flex-wrap: wrap; }
-        .faq-title-col { flex: 1; min-width: 280px; text-align: left; position: sticky; top: 40px; padding-left: 20px; }
-        .faq-logo-text { font-size: 7rem; font-family: 'Poppins', sans-serif; color: var(--primary); font-weight: 700; line-height: 0.8; text-transform: capitalize; }
-        .faq-subtitle-text { font-family: 'Parisienne', cursive; font-size: 3rem; font-style: normal; color: var(--primary); margin-left: 40px; margin-top: -10px; }
+        .faq-title-col { flex: 1; min-width: 280px; text-align: left; position: sticky; top: 40px; padding-left: 40px; }
+        
+        /* Conteneur pour superposer ou imbriquer proprement FAQ et fréquentes */
+        .faq-title-wrapper { position: relative; display: inline-block; }
+        .faq-logo-text { font-size: 8rem; font-family: 'Poppins', sans-serif; color: var(--primary); font-weight: 700; line-height: 0.75; text-transform: uppercase; letter-spacing: -2px; }
+        .faq-subtitle-text { font-family: 'Great Vibes', cursive; font-size: 3.2rem; color: var(--primary); position: relative; margin-top: -25px; margin-left: 35px; transform: rotate(-3deg); }
         
         .faq-content-col { flex: 1.8; min-width: 300px; display: flex; flex-direction: column; gap: 15px; }
         .faq-item { background: var(--bg-light); border: 1px solid #e3d8f5; border-radius: 12px; overflow: hidden; transition: all 0.2s ease; }
@@ -117,7 +120,7 @@
         @media(max-width: 900px) {
             .faq-section { flex-direction: column; text-align: center; }
             .faq-title-col { position: static; text-align: center; padding-left: 0; }
-            .faq-subtitle-text { margin-left: 0; }
+            .faq-subtitle-text { margin-left: 0; transform: none; }
         }
 
         .footer { background-color: #241d1a; color: #b5b0ad; text-align: center; padding: 50px 20px; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -289,8 +292,10 @@
     <!-- SECTION FAQ -->
     <section class="faq-section" id="inscription">
         <div class="faq-title-col">
-            <div class="faq-logo-text">faq</div>
-            <div class="faq-subtitle-text">fréquentes</div>
+            <div class="faq-title-wrapper">
+                <div class="faq-logo-text">FAQ</div>
+                <div class="faq-subtitle-text">fréquentes</div>
+            </div>
         </div>
         <div class="faq-content-col">
             <div class="faq-item">
