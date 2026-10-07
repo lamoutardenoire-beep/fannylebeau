@@ -391,28 +391,156 @@
 </section>
 
     <!-- 3. QUALIFICATION -->
-    <section class="section" style="padding-top: 0;">
-        <h2 class="section-title">Est-ce que cette masterclass est <span>pour toi</span> ?</h2>
-        <div class="grid-2">
-            <div class="qualification-card positive">
-                <h3>✓ C'est pour toi si :</h3>
-                <ul>
-                    <li>Tu as une véritable expertise mais ton acquisition client manque cruellement de prévisibilité.</li>
-                    <li>Tu en as assez de tester des tactiques isolées sur les réseaux sans savoir ce qui convertit.</li>
-                    <li>Tu veux structurer un système clair pour sécuriser tes revenus récurrents.</li>
-                </ul>
-            </div>
-            <div class="qualification-card negative">
-                <h3>✕ Ce n'est PAS pour toi si :</h3>
-                <ul>
-                    <li>Tu cherches des solutions magiques sans structurer ton offre ni fournir d'effort stratégique.</li>
-                    <li>Tu cours après des vanity metrics (likes, abonnés) sans lien avec ton chiffre d'affaires.</li>
-                    <li>Ton entreprise tourne déjà à plein régime avec un tunnel parfaitement rodé.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <style>
+    /* SECTION QUALIFICATION / POLARISATION */
+    .qualif-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
 
+    .qualif-card {
+        background: rgba(22, 19, 33, 0.6);
+        border-radius: 16px;
+        padding: 35px 30px;
+        backdrop-filter: blur(10px);
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* CARTE POUR QUI (ACCENT VERT / VALIDATION) */
+    .qualif-card.positive {
+        border: 1px solid rgba(34, 197, 94, 0.3);
+        background: linear-gradient(180deg, rgba(34, 197, 94, 0.03) 0%, rgba(22, 19, 33, 0.6) 100%);
+    }
+
+    /* CARTE PAS POUR QUI (ACCENT ROUGE / DISQUALIFICATION) */
+    .qualif-card.negative {
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        background: linear-gradient(180deg, rgba(239, 68, 68, 0.03) 0%, rgba(22, 19, 33, 0.6) 100%);
+    }
+
+    .qualif-title {
+        font-size: 1.25rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .qualif-card.positive .qualif-title {
+        color: #4ade80;
+    }
+
+    .qualif-card.negative .qualif-title {
+        color: #f87171;
+    }
+
+    .qualif-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .qualif-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        font-size: 0.92rem;
+        line-height: 1.6;
+        color: #e5e7eb;
+    }
+
+    .qualif-item strong {
+        color: #ffffff;
+    }
+
+    .qualif-icon {
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+
+    .positive .qualif-icon {
+        background: rgba(34, 197, 94, 0.2);
+        color: #4ade80;
+        border: 1px solid rgba(34, 197, 94, 0.4);
+    }
+
+    .negative .qualif-icon {
+        background: rgba(239, 68, 68, 0.2);
+        color: #f87171;
+        border: 1px solid rgba(239, 68, 68, 0.4);
+    }
+
+    @media (max-width: 850px) {
+        .qualif-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+</style>
+
+<section class="section">
+    <h2 class="section-title">Est-ce que cette masterclass est <span>pour toi</span> ?</h2>
+
+    <div class="qualif-grid">
+        <!-- POUR QUI -->
+        <div class="qualif-card positive">
+            <div class="qualif-title">
+                <span>✓</span> C'est pour toi si :
+            </div>
+            <ul class="qualif-list">
+                <li class="qualif-item">
+                    <span class="qualif-icon">✓</span>
+                    <div><strong>Tu as une vraie expertise</strong>, mais ton acquisition client manque de prévisibilité.</div>
+                </li>
+                <li class="qualif-item">
+                    <span class="qualif-icon">✓</span>
+                    <div><strong>Tu es fatigué de tester des astuces isolées</strong> sur les réseaux sans savoir ce qui fait signer des clients.</div>
+                </li>
+                <li class="qualif-item">
+                    <span class="qualif-icon">✓</span>
+                    <div><strong>Tu veux arrêter d'improviser</strong> et suivre un plan simple, étape par étape, pour avoir des résultats réguliers.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- PAS POUR QUI -->
+        <div class="qualif-card negative">
+            <div class="qualif-title">
+                <span>✕</span> Ce n'est PAS pour toi si :
+            </div>
+            <ul class="qualif-list">
+                <li class="qualif-item">
+                    <span class="qualif-icon">✕</span>
+                    <div><strong>Tu cherches une recette magique</strong> sans vouloir structurer ton offre ni ton positionnement.</div>
+                </li>
+                <li class="qualif-item">
+                    <span class="qualif-icon">✕</span>
+                    <div><strong>Tu cherches juste à accumuler des likes et des abonnés</strong> au lieu de viser un chiffre d'affaires réel.</div>
+                </li>
+                <li class="qualif-item">
+                    <span class="qualif-icon">✕</span>
+                    <div><strong>Tu n'es pas prêt à appliquer une vraie méthode</strong> pour faire passer ton activité au niveau supérieur.</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
     <!-- 4. LES BONUS EXCLUSIFS -->
     <section class="bonus-section">
         <h2 class="section-title" style="margin-bottom: 10px;">Les <span>Bonus Offerts</span> en Direct</h2>
