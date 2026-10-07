@@ -10,7 +10,7 @@
             --primary: #7253f9;
             --accent: #cb6ce6;
             --text-dark: #2b2522;
-            --bg-dark: #0f0d14;
+            --bg-dark: #16121e;
             --bg-light: #f7f6fa;
             --white: #ffffff;
         }
@@ -64,7 +64,21 @@
 
         .cta-container-center { max-width: 600px; margin: 0 auto; text-align: center; }
 
-        .footer { text-align: center; padding: 40px; background: var(--white); font-size: 0.9rem; color: #666; border-top: 1px solid #eee; margin-top: 60px; }
+        /* Section Sombre : 3 Bonus Offerts */
+        .bonus-section { background-color: #1e1929; color: var(--white); padding: 80px 20px; text-align: center; }
+        .bonus-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .bonus-title { font-size: 2.2rem; font-family: 'Poppins', sans-serif; font-weight: 700; margin-bottom: 10px; }
+        .bonus-title span { color: #cb6ce6; }
+        .bonus-subtitle { font-size: 1.3rem; font-style: italic; font-family: 'Poppins', sans-serif; color: #dcd6f7; margin-bottom: 15px; }
+        .bonus-desc { font-size: 0.95rem; color: #b8aedc; margin-bottom: 50px; }
+        
+        .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .bonus-card { background: transparent; border: 2px solid #8e6ee2; border-radius: 16px; padding: 35px 25px; text-align: center; }
+        .bonus-card h3 { font-size: 1.1rem; font-weight: 700; color: #cb6ce6; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .bonus-card p { font-size: 0.95rem; color: #e4e0f2; line-height: 1.5; }
+        @media(max-width: 900px) { .bonus-grid { grid-template-columns: 1fr; } }
+
+        .footer { text-align: center; padding: 40px; background: var(--white); font-size: 0.9rem; color: #666; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
@@ -145,11 +159,34 @@
             </div>
         </div>
 
-        <div class="cta-container-center">
+        <div class="cta-container-center" style="margin-bottom: 0;">
             <a href="#inscription" class="cta-button">
                 JE RÉSERVE MA PLACE
                 <span class="cta-sub" style="color: #fff;">Dimanche 11 octobre à 20h00</span>
             </a>
+        </div>
+    </section>
+
+    <!-- SECTION 3 BONUS OFFERTS -->
+    <section class="bonus-section">
+        <div class="bonus-icon">🎁</div>
+        <h2 class="bonus-title">3 BONUS <span>OFFERTS</span></h2>
+        <div class="bonus-subtitle">Si tu es en live</div>
+        <p class="bonus-desc">Distribués en direct pendant le live, et nulle part ailleurs</p>
+        
+        <div class="bonus-grid">
+            <div class="bonus-card">
+                <h3>Bonus 1</h3>
+                <p>Le guide des conversations qui convertissent pour transformer l'intérêt en vente.</p>
+            </div>
+            <div class="bonus-card">
+                <h3>Bonus 2</h3>
+                <p>Le guide des différents modèles pour monétiser ton expertise et choisir celui qui correspond à ton activité, tes objectifs et ton mode de vie.</p>
+            </div>
+            <div class="bonus-card">
+                <h3>Bonus 3</h3>
+                <p>Les 10 erreurs qui plombent tes ventes sans que tu t'en rendes compte.</p>
+            </div>
         </div>
     </section>
 
