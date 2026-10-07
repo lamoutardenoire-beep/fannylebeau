@@ -104,7 +104,33 @@
         .cta-button-banner { background: linear-gradient(90deg, #e8a5f5, #b886fc); color: #16121e; border: none; padding: 20px 40px; font-size: 1.25rem; font-weight: 700; border-radius: 12px; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: transform 0.2s, box-shadow 0.2s; }
         .cta-button-banner:hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); }
 
-        .footer { text-align: center; padding: 40px; background: var(--white); font-size: 0.9rem; color: #666; border-top: 1px solid #eee; }
+        /* Section FAQ */
+        .faq-section { max-width: 1100px; margin: 0 auto; padding: 80px 20px; display: flex; gap: 50px; align-items: flex-start; flex-wrap: wrap; }
+        .faq-title-col { flex: 1; min-width: 280px; text-align: center; position: sticky; top: 40px; }
+        .faq-logo-text { font-size: 4rem; font-family: 'Poppins', sans-serif; color: var(--primary); font-weight: 700; line-height: 1; }
+        .faq-subtitle-text { font-size: 1.8rem; font-style: italic; color: #555; margin-top: -10px; }
+        
+        .faq-content-col { flex: 1.8; min-width: 300px; display: flex; flex-direction: column; gap: 15px; }
+        .faq-item { background: var(--bg-light); border: 1px solid #e3d8f5; border-radius: 12px; overflow: hidden; transition: all 0.2s ease; }
+        .faq-item details { padding: 20px 25px; cursor: pointer; }
+        .faq-item summary { font-weight: 600; font-size: 1.05rem; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: "▼"; font-size: 0.8rem; color: var(--text-dark); transition: transform 0.2s; }
+        .faq-item details[open] summary::after { transform: rotate(180deg); }
+        .faq-answer { margin-top: 15px; font-size: 0.95rem; color: var(--text-dark); line-height: 1.6; }
+
+        @media(max-width: 900px) {
+            .faq-section { flex-direction: column; }
+            .faq-title-col { position: static; }
+        }
+
+        /* Footer Sombre */
+        .footer { background-color: #241d1a; color: #b5b0ad; text-align: center; padding: 50px 20px; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-logo { font-family: 'Poppins', sans-serif; font-size: 1.5rem; color: #d4af37; font-weight: 600; margin-bottom: 20px; letter-spacing: 2px; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #b5b0ad; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-disclaimer { max-width: 800px; margin: 0 auto; color: #888; font-size: 0.75rem; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -265,8 +291,63 @@
         </div>
     </section>
 
+    <!-- SECTION FAQ -->
+    <section class="faq-section">
+        <div class="faq-title-col">
+            <div class="faq-logo-text">FAQ</div>
+            <div class="faq-subtitle-text">Questions fréquentes</div>
+        </div>
+        <div class="faq-content-col">
+            <div class="faq-item">
+                <details>
+                    <summary>À qui s'adresse la masterclass ?</summary>
+                    <div class="faq-answer">Cette masterclass s'adresse aux femmes qui viennent de lancer leur activité — ou qui sont sur le point de le faire — et qui veulent arrêter de tester des choses au hasard pour construire <strong>une vraie stratégie pour se faire connaître et trouver leurs premières clientes.</strong></div>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Est-ce que tu vas nous vendre quelque chose ?</summary>
+                    <div class="faq-answer">La masterclass est totalement offerte. Mais à la fin, si tu as envie d'aller plus loin et être accompagnée dans la construction de ton business, je vais te parler de comment on peut travailler ensemble. Si tu n'as pas envie c'est pas un problème, tu repars avec toutes les connaissances que tu auras apprise durant le live et c'est aussi très bien :)</div>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Je n'ai pas encore une offre parfaitement définie, est-ce que je peux quand même venir ?</summary>
+                    <div class="faq-answer"><strong>Oui.</strong> On verra justement comment construire une offre suffisamment claire et désirable pour que les bonnes personnes comprennent <strong>ce que tu proposes, pourquoi c'est fait pour elles et pourquoi elles devraient te choisir.</strong></div>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Est-ce que je pourrais te poser des questions ?</summary>
+                    <div class="faq-answer">Évidemment ! C'est même la meilleure raison pour venir en live. Tu poses toutes tes questions dans le chat et j'y répondrai à la fin :)</div>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Ça dure combien de temps ?</summary>
+                    <div class="faq-answer">Le live dure 1h30 montre en main ! Bloque ton temps de 20h00 à 21h30 dimanche et garde 15 minutes de rab au cas où ! Si tu es un peu en retard, ce n'est pas grave, rejoins le live dès que possible ! C'est toujours mieux de ne pas y assister du tout :)</div>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Je ne suis pas sûre de pouvoir être présente, y aura-t-il un replay ?</summary>
+                    <div class="faq-answer"><strong>Oui, mais je te recommande vraiment d'être là en direct</strong> pour profiter de l'intégralité de la masterclass, des bonus et du temps de questions-réponses.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2026 FL Boost Her • Tous droits réservés</p>
+        <div class="footer-logo">FL</div>
+        <div class="footer-links">
+            <a href="#">Conditions Générales de Vente</a> | 
+            <a href="#">Mentions Légales</a>
+        </div>
+        <div class="footer-disclaimer">
+            Ce site ne fait pas partie du site YouTube™, Google™, Facebook™ Inc. ou Facebook Inc. De plus, ce site n'est PAS approuvé par YouTube™, Google™ en aucune façon. FACEBOOK™ est une marque de commerce de FACEBOOK, Inc. GOOGLE™ et YOUTUBE™ sont des marques de commerce de GOOGLE INC.<br>
+            FL Boost Her © 2026 - Tous droits réservés
+        </div>
     </footer>
 
 </body>
