@@ -41,19 +41,6 @@
         .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: var(--text-dark); }
         .section-title span { color: var(--primary); font-style: italic; }
 
-        /* SECTION AVANT / APRES (TUNNEL ACTUEL VS OPTIMISÉ) */
-        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; }
-        .comparison-card { background: var(--bg-light); border-radius: 16px; padding: 35px 30px; border: 1px solid #e3d8f5; }
-        .comparison-card.before { border-top: 5px solid #e06d6d; }
-        .comparison-card.after { border-top: 5px solid var(--primary); background: #fbf9ff; }
-        .comparison-card h3 { font-size: 1.3rem; margin-bottom: 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
-        .comparison-card.before h3 { color: #c93b3b; }
-        .comparison-card.after h3 { color: var(--primary); }
-        .comparison-card ul { list-style: none; }
-        .comparison-card li { margin-bottom: 15px; position: relative; padding-left: 25px; font-size: 0.95rem; line-height: 1.5; }
-        .comparison-card.before li::before { content: "✕"; position: absolute; left: 0; color: #c93b3b; font-weight: bold; }
-        .comparison-card.after li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
-
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px; }
         .learn-card { background: var(--bg-light); border: 2px solid #e3d8f5; border-radius: 16px; padding: 35px 25px; text-align: center; }
         .learn-step { font-size: 1.8rem; font-weight: 700; color: #d6b8f3; margin-bottom: 10px; }
@@ -64,7 +51,6 @@
         @media(max-width: 900px) { 
             .grid-3 { grid-template-columns: 1fr; }
             .grid-2 { grid-template-columns: 1fr; } 
-            .comparison-grid { grid-template-columns: 1fr; }
             .hero-container { flex-direction: column; text-align: center; }
         }
         
@@ -113,9 +99,11 @@
         .cta-button-banner { background: linear-gradient(90deg, #e8a5f5, #b886fc); color: #16121e; border: none; padding: 20px 40px; font-size: 1.25rem; font-weight: 700; border-radius: 12px; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: transform 0.2s, box-shadow 0.2s; }
         .cta-button-banner:hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); }
 
-        /* SECTION FAQ */
+        /* SECTION FAQ CORRIGÉE EXACTE */
         .faq-section { max-width: 1100px; margin: 0 auto; padding: 80px 20px; display: flex; gap: 50px; align-items: flex-start; flex-wrap: wrap; }
         .faq-title-col { flex: 1; min-width: 280px; text-align: left; position: sticky; top: 40px; padding-left: 40px; }
+        
+        /* Conteneur pour superposer ou imbriquer proprement FAQ et fréquentes */
         .faq-title-wrapper { position: relative; display: inline-block; }
         .faq-logo-text { font-size: 8rem; font-family: 'Poppins', sans-serif; color: var(--primary); font-weight: 700; line-height: 0.75; text-transform: uppercase; letter-spacing: -2px; }
         .faq-subtitle-text { font-family: 'Great Vibes', cursive; font-size: 3.2rem; color: var(--primary); position: relative; margin-top: -25px; margin-left: 35px; transform: rotate(-3deg); }
@@ -150,7 +138,7 @@
         <div class="countdown-timer">05 Jours : 02 Heures : 26 Minutes : 05 Secondes</div>
     </div>
 
-    <!-- HERO SECTION AVEC L'ACCROCHE OPTIMISÉE -->
+    <!-- HERO SECTION -->
     <header class="hero">
         <div class="hero-container">
             <div class="hero-image-col">
@@ -158,8 +146,8 @@
             </div>
             <div class="hero-content-col">
                 <div class="sub-badge">Masterclass live offerte • Dimanche 11 octobre, 20h</div>
-                <h1>Le problème n'est pas ton contenu. C'est l'absence d'un <span>pont de conversion.</span></h1>
-                <p>Comment transformer une expertise invisible en un système d'acquisition prévisible en 4 piliers — sans y passer tes soirées.</p>
+                <h1>Tu as l'expertise, mais <span>toujours pas de clients ?</span></h1>
+                <p>Découvre les 4 piliers qui manquent à ton business pour enfin attirer, convaincre et vendre.</p>
                 <a href="#inscription" class="cta-button" style="display: inline-block; width: 100%;">
                     JE RÉSERVE MA PLACE
                     <span class="cta-sub">Dimanche 11 octobre à 20h00 • Replay offert</span>
@@ -168,40 +156,8 @@
         </div>
     </header>
 
-    <!-- SECTION AVANT / APRES : TUNNEL ACTUEL VS TUNNEL OPTIMISÉ -->
-    <section class="section">
-        <h2 class="section-title">L'impact de l'optimisation : <span>Tunnel Actuel vs Tunnel Optimisé</span></h2>
-        <div class="comparison-grid">
-            <div class="comparison-card before">
-                <h3>Son Tunnel Actuel</h3>
-                <ul>
-                    <li>Accroche centrée sur le symptôme ("Tu n'as pas de clients") qui génère une résistance psychologique.</li>
-                    <li>Absence de mécanisme unique tangible, laissant planer le doute sur la valeur du contenu.</li>
-                    <li>Structure linéaire classique sans friction calculée pour retenir l'attention de l'experte.</li>
-                    <li>Taux de conversion sous-optimal sur le trafic froid en raison d'un manque de différenciation.</li>
-                </ul>
-            </div>
-            <div class="comparison-card after">
-                <h3>Le Tunnel Optimisé (Ton Expertise)</h3>
-                <ul>
-                    <li>Accroche par le mécanisme (*Mechanism Hook*) qui valide instantanément l'expertise et lève le bouclier défensif.</li>
-                    <li>Architecture de la valeur perçue basée sur les standards neuromarketing US/Australie.</li>
-                    <li>Parcours utilisateur millimétré réduisant la friction cognitive et maximisant l'urgence.</li>
-                    <li>Transformation directe de la perception de la cible pour imposer l'évidence de l'offre.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="cta-container-center">
-            <a href="#inscription" class="cta-button">
-                JE RÉSERVE MA PLACE
-                <span class="cta-sub" style="color: #fff;">Dimanche 11 octobre à 20h</span>
-            </a>
-        </div>
-    </section>
-
     <!-- SECTION CE QUE TU VAS APPRENDRE -->
-    <section class="section" style="padding-top: 0;">
+    <section class="section">
         <h2 class="section-title">Ce que tu vas <span>apprendre</span> durant ce live</h2>
         <div class="grid-3">
             <div class="learn-card">
@@ -219,6 +175,13 @@
                 <h3>De l'attention aux clients</h3>
                 <p>Comment <strong>créer une vraie stratégie d'acquisition</strong> pour transformer ton audience en clients.</p>
             </div>
+        </div>
+
+        <div class="cta-container-center">
+            <a href="#inscription" class="cta-button">
+                JE RÉSERVE MA PLACE
+                <span class="cta-sub" style="color: #fff;">Dimanche 11 octobre à 20h</span>
+            </a>
         </div>
     </section>
 
