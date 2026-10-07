@@ -9,6 +9,7 @@
         :root {
             --bg-dark: #0d0b12;
             --bg-card: #161321;
+            --bg-light: #1f1b2e;
             --primary: #8a5cf6;
             --accent: #a855f7;
             --accent-glow: rgba(168, 85, 247, 0.25);
@@ -19,10 +20,8 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Inter', sans-serif; color: var(--text-main); background-color: var(--bg-dark); line-height: 1.6; }
         
-        /* Top Notification Bar */
         .top-bar { background: linear-gradient(90deg, #7c3aed, #a855f7); color: var(--white); padding: 10px 20px; text-align: center; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; }
 
-        /* Hero Section */
         .hero { padding: 60px 20px 80px; max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
         .hero-content { flex: 1.2; min-width: 300px; }
         .hero-badge { display: inline-block; background: var(--accent-glow); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.4); padding: 6px 14px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
@@ -30,7 +29,6 @@
         .hero h1 span { background: linear-gradient(90deg, #c084fc, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.7; }
 
-        /* Direct Opt-in Box (US Standard) */
         .optin-box { background: var(--bg-card); border: 1px solid rgba(168, 85, 247, 0.3); padding: 30px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
         .optin-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 15px; color: var(--white); display: flex; align-items: center; gap: 8px; }
         .form-group { margin-bottom: 15px; }
@@ -42,27 +40,57 @@
         .form-note { display: block; text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 10px; }
 
         .hero-media { flex: 0.8; min-width: 280px; text-align: center; }
-        .hero-img { width: 100%; max-width: 320px; border-radius: 16px; border: 2px solid rgba(168, 85, 247, 0.2); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
 
-        /* Sections standard */
         .section { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
         .section-title { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 50px; letter-spacing: -0.5px; }
         .section-title span { color: var(--accent); }
 
-        /* Framework / Pilliers Grid */
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .framework-card { background: var(--bg-card); border: 1px solid #272138; border-radius: 14px; padding: 30px 20px; position: relative; }
+        /* Framework Grid */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 40px; }
+        .framework-card { background: var(--bg-card); border: 1px solid #272138; border-radius: 14px; padding: 30px 20px; }
         .framework-step { font-size: 0.75rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
         .framework-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; color: var(--white); }
         .framework-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
 
+        /* Qualification Grid */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .qualification-card { background: var(--bg-card); border: 1px solid #272138; border-radius: 16px; padding: 35px; }
+        .qualification-card.negative { border-color: rgba(239, 68, 68, 0.3); }
+        .qualification-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; color: var(--white); }
+        .qualification-card ul { list-style: none; }
+        .qualification-card li { margin-bottom: 15px; position: relative; padding-left: 25px; font-size: 0.92rem; color: var(--text-muted); }
+        .qualification-card.positive li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .qualification-card.negative li::before { content: "✕"; position: absolute; left: 0; color: #ef4444; font-weight: bold; }
+
+        /* Bonus Section */
+        .bonus-section { background-color: var(--bg-light); border-top: 1px solid #272138; border-bottom: 1px solid #272138; padding: 80px 20px; text-align: center; }
+        .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1000px; margin: 40px auto 0; text-align: left; }
+        .bonus-card { background: var(--bg-card); border: 1px solid #3b3252; border-radius: 14px; padding: 25px; }
+        .bonus-card h4 { color: var(--accent); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+        .bonus-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+        .bonus-card p { font-size: 0.88rem; color: var(--text-muted); }
+
+        /* Bio Section */
+        .bio-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; background: var(--bg-card); border: 1px solid #272138; border-radius: 20px; padding: 40px; }
+        .bio-text { flex: 1.5; min-width: 280px; }
+        .bio-text p { margin-bottom: 15px; color: var(--text-muted); font-size: 0.95rem; }
+        .bio-avatar { flex: 1; min-width: 240px; text-align: center; }
+        .bio-placeholder-img { width: 220px; height: 220px; background: #2b233d; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: var(--text-muted); border: 2px solid var(--accent); }
+
+        /* FAQ Section */
+        .faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        .faq-item { background: var(--bg-card); border: 1px solid #272138; border-radius: 12px; overflow: hidden; }
+        .faq-item details { padding: 20px 25px; cursor: pointer; }
+        .faq-item summary { font-weight: 600; font-size: 1rem; color: var(--white); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: "+"; font-size: 1.2rem; color: var(--accent); }
+        .faq-item details[open] summary::after { content: "-"; }
+        .faq-answer { margin-top: 15px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
         @media(max-width: 850px) {
-            .hero { flex-direction: column; text-align: center; }
-            .hero-content { text-align: left; }
-            .grid-3 { grid-template-columns: 1fr; }
+            .hero, .grid-3, .grid-2, .bonus-grid { flex-direction: column; grid-template-columns: 1fr; }
         }
 
-        /* Footer */
         .footer { text-align: center; padding: 40px 20px; border-top: 1px solid #1a1625; font-size: 0.8rem; color: var(--text-muted); }
     </style>
 </head>
@@ -72,7 +100,7 @@
         ⚡ Masterclass Live Exclusive — Places limitées pour garantir l'interactivité en direct.
     </div>
 
-    <!-- HERO SECTION AVEC FORMULAIRE DIRECT (Conversion US Pattern) -->
+    <!-- 1. HERO & CAPTURE DIRECTE -->
     <header class="hero">
         <div class="hero-content">
             <span class="hero-badge">Masterclass Live Gratuite</span>
@@ -97,7 +125,7 @@
         </div>
     </header>
 
-    <!-- SECTION MÉCANISME PROPRIÉTAIRE -->
+    <!-- 2. PILIERS / MÉCANISME -->
     <section class="section">
         <h2 class="section-title">Ce que tu vas découvrir dans le <span>Framework</span></h2>
         <div class="grid-3">
@@ -115,6 +143,93 @@
                 <div class="framework-step">Pilier 03</div>
                 <h3>La Conversion Fluide</h3>
                 <p>Structurer un échange ou une page de vente qui transforme l'intérêt en engagement ferme, sans friction ni argumentaire lourd.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. QUALIFICATION (Pour qui / Pas pour qui) -->
+    <section class="section" style="padding-top: 0;">
+        <h2 class="section-title">Est-ce que cette masterclass est <span>pour toi</span> ?</h2>
+        <div class="grid-2">
+            <div class="qualification-card positive">
+                <h3>✓ C'est pour toi si :</h3>
+                <ul>
+                    <li>Tu as une véritable expertise mais ton acquisition client manque cruellement de prévisibilité.</li>
+                    <li>Tu en as assez de tester des tactiques isolées sur les réseaux sans savoir ce qui convertit.</li>
+                    <li>Tu veux structurer un système clair pour sécuriser tes revenus récurrents.</li>
+                </ul>
+            </div>
+            <div class="qualification-card negative">
+                <h3>✕ Ce n'est PAS pour toi si :</h3>
+                <ul>
+                    <li>Tu cherches des solutions magiques sans structurer ton offre ni fournir d'effort stratégique.</li>
+                    <li>Tu cours après des vanity metrics (likes, abonnés) sans lien avec ton chiffre d'affaires.</li>
+                    <li>Ton entreprise tourne déjà à plein régime avec un tunnel parfaitement rodé.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. LES BONUS EXCLUSIFS -->
+    <section class="bonus-section">
+        <h2 class="section-title" style="margin-bottom: 10px;">Les <span>Bonus Offerts</span> en Direct</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Distribués aux participantes présentes du début à la fin de la session live.</p>
+        
+        <div class="bonus-grid">
+            <div class="bonus-card">
+                <h4>Bonus #1</h4>
+                <h3>Le script de conversation</h3>
+                <p>Les messages exacts pour transformer l'intérêt d'un prospect en appel de vente sans technique agressive.</p>
+            </div>
+            <div class="bonus-card">
+                <h4>Bonus #2</h4>
+                <h3>L'audit des 10 erreurs</h3>
+                <p>La checklist pour identifier et corriger les failles invisibles qui sabotent tes conversions actuelles.</p>
+            </div>
+            <div class="bonus-card">
+                <h4>Bonus #3</h4>
+                <h3>Le planificateur d'offre</h3>
+                <p>Le template Notion pour clarifier ton positionnement tarifaire et structurer ton offre haut de gamme.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. BIO DE L'EXPERTE -->
+    <section class="section">
+        <h2 class="section-title">Qui va animer cette masterclass ?</h2>
+        <div class="bio-container">
+            <div class="bio-text">
+                <p>Bonjour, c'est Fanny !</p>
+                <p>J'ai passé plus de 12 ans à concevoir des stratégies marketing et des tunnels de vente exigeants avant de me consacrer pleinement à l'accompagnement d'entrepreneuses.</p>
+                <p>Mon constat a été simple : la plupart des expertes s'épuisent non pas par manque de compétences, mais par absence de structure d'acquisition fiable. Aujourd'hui, j'aide les entrepreneuses à poser les bases d'une activité fluide et pérenne.</p>
+            </div>
+            <div class="bio-avatar">
+                <div class="bio-placeholder-img">Photo Fanny</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FAQ (FOIRE AUX QUESTIONS) -->
+    <section class="section" style="padding-top: 0;">
+        <h2 class="section-title">Questions <span>fréquentes</span></h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <details>
+                    <summary>Est-ce que la masterclass sera enregistrée ?</summary>
+                    <div class="faq-answer">Oui, un replay sera envoyé par e-mail, mais la présence en direct est fortement conseillée pour participer aux questions-réponses et débloquer les bonus.</div>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Combien coûte l'accès à l'événement ?</summary>
+                    <div class="faq-answer">Rien du tout. Cette masterclass est 100 % offerte et à haute valeur ajoutée.</div>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Combien de temps dure la session ?</summary>
+                    <div class="faq-answer">Prévoyez environ 1h30, incluant la présentation stratégique et le temps d'échange en direct avec vous.</div>
+                </details>
             </div>
         </div>
     </section>
